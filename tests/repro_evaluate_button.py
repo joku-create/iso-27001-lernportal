@@ -15,13 +15,14 @@ with sync_playwright() as p:
             ("0001-standortbestimmung.html", "button[type=submit]", "von 10 Punkten"),
             ("0002-normarchitektur-und-versionsfalle.html", "#grade", "/5 richtig"),
             ("0003-scope-risikobehandlung-und-soa.html", "#grade", "/5 richtig"),
+            ("0004-kontext-fuehrung-und-dokumentation.html", "#grade", "/5 richtig"),
         ]:
             page = context.new_page()
             errors=[]
             page.on("console", lambda msg: errors.append(f"console:{msg.type}:{msg.text}") if msg.type == "error" else None)
             page.on("pageerror", lambda exc: errors.append(f"pageerror:{exc}"))
             response=page.goto(BASE+filename, wait_until="networkidle")
-            if filename.startswith(("0002", "0003")):
+            if filename.startswith(("0002", "0003", "0004")):
                 assert page.locator(".q").count() == 5
                 assert all(not page.locator(".explain").nth(i).is_visible() for i in range(5)), "Erklärungen müssen vor der Auswertung verborgen sein"
                 page.locator(".q").nth(0).locator("input[value=a]").check()
@@ -31,13 +32,22 @@ with sync_playwright() as p:
             visible=page.locator("#result").is_visible()
             print(f"mobile={mobile} page={filename} http={response.status} visible={visible} result={text!r} errors={errors}")
             assert visible and expected in text and not errors
-            if filename.startswith(("0002", "0003")):
+            if filename.startswith(("0002", "0003", "0004")):
                 assert text.startswith("1/5"), text
                 assert all(page.locator(".explain").nth(i).is_visible() for i in range(5)), "Erklärungen müssen nach der Auswertung sichtbar sein"
                 assert page.locator(".q.ok").count() == 1
                 assert page.locator(".q.bad").count() == 4
                 assert page.locator(".correct-answer").count() > 0, "Richtige Optionen müssen markiert sein"
                 assert page.locator(".q.bad").first.evaluate("e => getComputedStyle(e).backgroundColor") != "rgba(0, 0, 0, 0)", "Falsche Aufgaben brauchen eine sichtbare Markierung"
+                for i in range(5):
+                    question = page.locator(".q").nth(i)
+                    question.locator("input").evaluate_all("els => els.forEach(el => { el.checked = false; })")
+                    for value in question.get_attribute("data-correct").split(","):
+                        question.locator(f"input[value={value}]").check()
+                page.locator(button).click()
+                assert page.locator("#result").inner_text().startswith("5/5"), "Vollständig richtige Auswahl muss 5/5 ergeben"
+                assert page.locator(".q.ok").count() == 5
+                assert page.locator(".q.bad").count() == 0
             page.close()
         context.close()
     browser.close()
