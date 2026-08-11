@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Lektion 3: Scope, Risikobehandlung und SoA</title>
+  <link rel="stylesheet" href="../assets/base.css">
+</head>
+<body>
+<main>
+  <header>
+    <span class="eyebrow">ICO FND · Gezielte Lückenarbeit</span>
+    <h1>Vom Scope zur SoA</h1>
+    <p class="lead">In Lektion 2 waren die Aufgaben 1 bis 3 falsch. Diese Übung trennt deshalb drei Dinge: Wo das ISMS gilt, wie Controls ausgewählt werden und was die Erklärung zur Anwendbarkeit belegt.</p>
+  </header>
+
+  <section class="card">
+    <h2>1. Scope: Wo gilt das ISMS?</h2>
+    <p>Der Anwendungsbereich legt Grenzen und Anwendbarkeit des ISMS fest. Er kann einen begründeten Teil einer Organisation umfassen. Dabei werden Kontext, Anforderungen interessierter Parteien sowie Schnittstellen und Abhängigkeiten berücksichtigt.</p>
+    <aside><strong>Prüfungsfalle:</strong> Ein engerer Scope schließt Teile der Organisation aus dem zertifizierten Bereich aus. Innerhalb des festgelegten Scopes gelten die Anforderungen der Klauseln 4 bis 10 trotzdem vollständig.</aside>
+  </section>
+
+  <section class="card">
+    <h2>2. Risikokette: Erst das Risiko, dann die Controls</h2>
+    <ol>
+      <li>Informationssicherheitsrisiken nach festgelegten Kriterien beurteilen.</li>
+      <li>Geeignete Optionen zur Risikobehandlung wählen.</li>
+      <li>Alle notwendigen Controls bestimmen.</li>
+      <li>Die bestimmten Controls mit Annex A vergleichen.</li>
+      <li>Die Erklärung zur Anwendbarkeit erstellen.</li>
+      <li>Risikobehandlungsplan und Akzeptanz der Restrisiken genehmigen lassen.</li>
+    </ol>
+    <aside><strong>Merksatz:</strong> Risiken bestimmen die Controls. Annex A prüft die Auswahl auf Lücken. Die SoA dokumentiert das Ergebnis.</aside>
+  </section>
+
+  <section class="card">
+    <h2>3. Was die SoA nachweisen muss</h2>
+    <p>Die Erklärung zur Anwendbarkeit enthält die notwendigen Controls, die Begründung ihrer Aufnahme und ihren Umsetzungsstatus. Ausschlüsse von Annex-A-Controls werden begründet. Notwendige Controls können auch aus anderen Quellen stammen.</p>
+    <p>Die SoA ersetzt weder Risikobeurteilung noch Risikobehandlungsplan. Sie macht die daraus abgeleiteten Control-Entscheidungen nachvollziehbar.</p>
+  </section>
+
+  <section class="card quiz">
+    <h2>4. Gezielter Wiederholungstest</h2>
+    <p>Eine, mehrere oder alle Antworten können richtig sein. Ein Punkt zählt nur bei vollständig richtiger Auswahl.</p>
+
+    <div class="q" data-correct="a,c">
+      <h3>1. Welche Aussagen zum Scope sind richtig?</h3>
+      <label><input type="checkbox" value="a"> Der Scope kann einen begründeten Teil der Organisation umfassen.</label>
+      <label><input type="checkbox" value="b"> Ein kleiner Scope erlaubt den Ausschluss einzelner Anforderungen aus Klausel 8.</label>
+      <label><input type="checkbox" value="c"> Schnittstellen und Abhängigkeiten sind bei der Abgrenzung zu berücksichtigen.</label>
+      <label><input type="checkbox" value="d"> Der Scope wird erst nach der Auswahl aller Annex-A-Controls festgelegt.</label>
+      <p class="explain">Richtig sind a und c. Der Scope grenzt den Geltungsbereich ab; er setzt innerhalb dieses Bereichs keine Anforderungen der Klauseln 4 bis 10 außer Kraft.</p>
+    </div>
+
+    <div class="q" data-correct="b,c,d">
+      <h3>2. Was gehört zur Risikobehandlung?</h3>
+      <label><input type="checkbox" value="a"> Alle Annex-A-Controls unabhängig vom Risiko übernehmen.</label>
+      <label><input type="checkbox" value="b"> Geeignete Optionen zur Behandlung der Risiken auswählen.</label>
+      <label><input type="checkbox" value="c"> Alle für die Behandlung notwendigen Controls bestimmen.</label>
+      <label><input type="checkbox" value="d"> Die bestimmte Control-Auswahl mit Annex A vergleichen.</label>
+      <p class="explain">Richtig sind b, c und d. Annex A ist die Referenz zum Gegenprüfen, nicht der Ausgangspunkt einer pauschalen Vollumsetzung.</p>
+    </div>
+
+    <div class="q" data-correct="a,c">
+      <h3>3. Welche Aussagen zur Control-Auswahl sind richtig?</h3>
+      <label><input type="checkbox" value="a"> Notwendige Controls dürfen auch außerhalb von Annex A liegen.</label>
+      <label><input type="checkbox" value="b"> Nur Controls aus ISO/IEC 27002 dürfen verwendet werden.</label>
+      <label><input type="checkbox" value="c"> Annex A hilft, übersehene notwendige Controls zu erkennen.</label>
+      <label><input type="checkbox" value="d"> Ein nicht umgesetztes Control darf niemals notwendig sein.</label>
+      <p class="explain">Richtig sind a und c. Die Norm begrenzt die Auswahl nicht auf Annex A. „Notwendig“ und „bereits umgesetzt“ sind unterschiedliche Angaben.</p>
+    </div>
+
+    <div class="q" data-correct="a,b,d">
+      <h3>4. Welche Angaben gehören in die SoA?</h3>
+      <label><input type="checkbox" value="a"> Die notwendigen Controls und die Begründung ihrer Aufnahme.</label>
+      <label><input type="checkbox" value="b"> Die Angabe, ob die notwendigen Controls umgesetzt sind.</label>
+      <label><input type="checkbox" value="c"> Eine vollständige Wiederholung der gesamten Risikobeurteilung.</label>
+      <label><input type="checkbox" value="d"> Die Begründung ausgeschlossener Annex-A-Controls.</label>
+      <p class="explain">Richtig sind a, b und d. Die Risikobeurteilung bleibt ein eigener Nachweis und wird nicht durch die SoA ersetzt.</p>
+    </div>
+
+    <div class="q" data-correct="a,c,d">
+      <h3>5. Ein Zahlungsprozess ist ausgelagert. Welche Aussagen sind richtig?</h3>
+      <label><input type="checkbox" value="a"> Relevante Schnittstellen zum Dienstleister gehören in die Scope-Betrachtung.</label>
+      <label><input type="checkbox" value="b"> Durch die Auslagerung entfallen automatisch alle zugehörigen Informationssicherheitsrisiken.</label>
+      <label><input type="checkbox" value="c"> Notwendige Controls werden weiterhin aus den behandelten Risiken abgeleitet.</label>
+      <label><input type="checkbox" value="d"> Ausschlüsse von Annex-A-Controls brauchen eine nachvollziehbare Begründung.</label>
+      <p class="explain">Richtig sind a, c und d. Auslagerung verändert Schnittstellen und Verantwortlichkeiten, beseitigt die Risiken aber nicht automatisch.</p>
+    </div>
+
+    <button id="grade" type="button">Auswerten</button>
+    <div id="result" class="result" aria-live="polite"></div>
+  </section>
+
+  <section class="card">
+    <h2>5. Primärquelle und nächster Schritt</h2>
+    <p>Lies in deiner ISO/IEC 27001:2022 die Abschnitte 4.3, 6.1.2 und 6.1.3. Achte beim Lesen auf die Verben: festlegen, beurteilen, auswählen, bestimmen, vergleichen, dokumentieren und genehmigen.</p>
+    <p><a href="0002-normarchitektur-und-versionsfalle.html">Zurück zu Lektion 2</a> · <a href="../index.html">Zum Lernbereich</a></p>
+    <p>Schick mir anschließend nur den neuen Punktestand und die grünen Aufgabennummern. Fragen zu einzelnen Formulierungen kannst du direkt hier im Chat stellen.</p>
+  </section>
+
+  <footer><p>Erstellt am 11.08.2026 · Originalfragen, keine ICO-Prüfungsfragen.</p></footer>
+</main>
+<script>
+document.getElementById('grade').addEventListener('click',()=>{
+  let score=0;
+  document.querySelectorAll('.q').forEach(q=>{
+    const correct=q.dataset.correct.split(',');
+    const got=[...q.querySelectorAll('input:checked')].map(x=>x.value).sort().join(',');
+    const ok=got===correct.slice().sort().join(',');
+    q.classList.toggle('ok',ok);
+    q.classList.toggle('bad',!ok);
+    q.querySelectorAll('input').forEach(input=>{
+      const label=input.closest('label');
+      label.classList.remove('correct-answer','selected-wrong');
+      if(correct.includes(input.value)) label.classList.add('correct-answer');
+      else if(input.checked) label.classList.add('selected-wrong');
+    });
+    q.querySelector('.explain').style.display='block';
+    if(ok) score++;
+  });
+  const r=document.getElementById('result');
+  r.textContent=`${score}/5 richtig. ${score===5?'Die Risikokette sitzt.':'Wiederhole nur die rot markierten Aufgaben.'}`;
+  r.style.display='block';
+  r.scrollIntoView({behavior:'smooth'});
+});
+</script>
+</body>
+</html>
